@@ -1,0 +1,8 @@
+'this wil display a line 36 spaces long
+'will also display an "E" graphic
+cls
+locate 1,1
+print string$(36,196)
+locate 2,1
+print chr$(228)
+end
