@@ -8,3 +8,4 @@
 7	A dead cell with no more or less than 3 living cells next to it becomes alive by reproduction.
 8	There can’t be any explosive growth.
 9	Small chaotic, unpredictable outcome must be in the program.
+10 Total recursion. The next generation is created, all at once, based on the previous generation
