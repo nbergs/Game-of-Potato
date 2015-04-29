@@ -6,3 +6,12 @@ print string$(36,196)
 locate 2,1
 print chr$(228)
 end
+ 
+ 
+ New Idea -Bryce D
+ 1 CLS
+ 10 INPUT "What is the X for the desired point?"; X -the user inputs their desired X
+ 20 INPUT "What is the Y for the desired point?"; Y -the user inputs their desired Y
+ 39 CLS -Clears Screen
+ 30 LOCATE X, Y -Program locates the users inputted X and Y
+ 40 PRINT CHR$(219) -Prints a live cell on the users designated point
