@@ -10,4 +10,4 @@
 9	Small chaotic, unpredictable outcome must be in the program.
 10 Total recursion. The next generation is created, all at once, based on the previous generation
 11 There must be 2 states that the cell must be in.
-Every cell interacts with the 8 other cells that are around it.
+12 Every cell interacts with the 8 other cells that are around it.
