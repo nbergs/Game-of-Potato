@@ -1,1 +1,59 @@
-Begin!
+Realstart:
+REM Introduction
+REM Board = 0
+DIM Array(38, 38)
+q = 0
+w = 0
+FOR q = 0 TO 37
+FOR w = 0 TO 37
+Array(q, w) = 0
+NEXT w
+NEXT q
+REM Edges = 11
+x = 0
+FOR x = 0 TO 37
+Array(0, x) = -11
+Array(x, 0) = -11
+Array(37, x) = -11
+Array(x, 37) = -11
+NEXT x
+REM Number calculation
+q = 1
+w = 1
+FOR q = 1 TO 36
+FOR w = 1 TO 36
+IF Array(q, w) = 10 THEN GOTO Blarg
+IF Array((q - 1), (w - 1)) > 0 THEN Array(q, w) = Array(q, w) + 1
+IF Array(q, (w - 1)) > 0 THEN Array(q, w) = Array(q, w) + 1
+IF Array((q + 1), (w - 1)) > 0 THEN Array(q, w) = Array(q, w) + 1
+IF Array((q - 1), w) > 0 THEN Array(q, w) = Array(q, w) + 1
+IF Array((q + 1), w) > 0 THEN Array(q, w) = Array(q, w) + 1
+IF Array((q - 1), (w + 1)) > 0 THEN Array(q, w) = Array(q, w) + 1
+IF Array(q, (w + 1)) > 0 THEN Array(q, w) = Array(q, w) + 1
+IF Array((q + 1), (w + 1)) > 0 THEN Array(q, w) = Array(q, w) + 1
+Blarg:
+NEXT w
+NEXT q
+REM Gameplay
+x = 1
+Pla:
+FOR x = 1 TO 128
+Iput:
+INPUT "Enter the x coordinate of the lower left corner of the space you choose"; q
+INPUT "Enter the y coordinate of the lower left corner of the space you choose"; w
+IF q > 36 GOTO Ermove
+IF q < 0 GOTO Ermove
+IF w > 36 GOTO Ermove
+IF w < 0 GOTO Ermove
+PRINT Array((q + 1), (w + 1))
+IF Array((q + 1), (w + 1)) = 10 GOTO Lose
+NEXT x
+
+INPUT "Play again (y or n)"; Repe$
+IF Repe$ = "Y" THEN GOTO Start
+IF Repe$ = "y" THEN GOTO Start
+END
+REM doofus
+Ermove:
+PRINT "Don't break the program doofus!"
+GOTO Iput
