@@ -1,14 +1,16 @@
 1st RULE MUST BE READ COMPLETELY THOUROUGH!!
 1	The rules must be simple enough so the user isn’t a doofus and breaks the program!
-2	The game must be zero player game that requires hardly any user input.
-3	It must be a limited of 36X36 grid. Max of infinite.
-4	A live cell with less than 2 living cells dies because of under population
-5	A live cell with 2 or 3 living cells next to it lives on to the next life.
-6	A live cell with more than 3 live cells dies by over population.
-7	A dead cell with no more or less than 3 living cells next to it becomes alive by reproduction.
-8	There can’t be any explosive growth.
-9	Small chaotic, unpredictable outcome must be in the program.
-10 Total recursion. The next generation is created, all at once, based on the previous generation
-11 There must be 2 states that the cell must be in.
+2 There must be 2 states that the cell must be in.
+3	The game must be zero player game that requires hardly any user input.
+4	It must be a limited of 36X36 grid. Max of infinite.
+5	A live cell with less than 2 living cells dies because of under population
+6	A live cell with 2 or 3 living cells next to it lives on to the next life.
+7	A live cell with more than 3 live cells dies by over population.
+8	A dead cell with no more or less than 3 living cells next to it becomes alive by reproduction.
+9	There can’t be any explosive growth.
+10	Small chaotic, unpredictable outcome must be in the program.
+11 Total recursion. The next generation is created, all at once, based on the previous generation
 12 Every cell interacts with the 8 other cells that are around it.
 13 Each generation functions from the previous generation.
+14 A program that keeps track of which areas are active so it saves time by not updating im inactive zones.
+15 If all 9 fields equals 3 the inner field for the next generation is life.
