@@ -13,4 +13,3 @@
 12 Every cell interacts with the 8 other cells that are around it.
 13 Each generation functions from the previous generation.
 14 A program that keeps track of which areas are active so it saves time by not updating in inactive areas
-15 If all 9 fields are equals 3 the inner fiels for the next generation is life.
