@@ -19,3 +19,4 @@ end
 New graphics being used 
 CHR$(254) for cell
 CHR$(216) for border
+blank for dead
