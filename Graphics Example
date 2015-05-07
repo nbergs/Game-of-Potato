@@ -15,3 +15,7 @@ end
  39 CLS -Clears Screen
  30 LOCATE X, Y -Program locates the users inputted X and Y
  40 PRINT CHR$(219) -Prints a live cell on the users designated point
+
+New graphics being used 
+CHR$(254) for cell
+CHR$(216) for border
