@@ -57,3 +57,35 @@ REM doofus
 Ermove:
 PRINT "Don't break the program doofus!"
 GOTO Iput
+
+
+New
+DIM Array(38, 38)
+P = 1
+DO UNTIL P = 10
+CLS
+INPUT "what is x coordinate"; a
+INPUT "what is y coordinate"; b
+P = P + 1
+LOOP
+GOTO GRID:
+
+
+
+GRID:
+ CLS
+ DIM P(38, 38)
+ LOCATE a, b
+ PRINT CHR$(254)
+ LOCATE 1, 1
+ PRINT STRING$(38, 216)
+ X = 2
+ DO UNTIL X = 38
+ LOCATE X, 1
+ PRINT CHR$(216)
+ LOCATE X, 38
+ PRINT CHR$(216)
+ X = X + 1
+ LOOP
+ LOCATE 38, 1
+ PRINT STRING$(38, 216)
