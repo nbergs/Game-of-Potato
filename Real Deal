@@ -1,90 +1,86 @@
 Realstart:
-REM Introduction
-REM Board = 0
-DIM Array(38, 38)
-q = 0
-w = 0
-FOR q = 0 TO 37
-FOR w = 0 TO 37
-Array(q, w) = 0
-NEXT w
-NEXT q
-REM Edges = 11
-x = 0
-FOR x = 0 TO 37
-Array(0, x) = -11
-Array(x, 0) = -11
-Array(37, x) = -11
-Array(x, 37) = -11
-NEXT x
-REM Number calculation
-q = 1
-w = 1
-FOR q = 1 TO 36
-FOR w = 1 TO 36
-IF Array(q, w) = 10 THEN GOTO Blarg
-IF Array((q - 1), (w - 1)) > 0 THEN Array(q, w) = Array(q, w) + 1
-IF Array(q, (w - 1)) > 0 THEN Array(q, w) = Array(q, w) + 1
-IF Array((q + 1), (w - 1)) > 0 THEN Array(q, w) = Array(q, w) + 1
-IF Array((q - 1), w) > 0 THEN Array(q, w) = Array(q, w) + 1
-IF Array((q + 1), w) > 0 THEN Array(q, w) = Array(q, w) + 1
-IF Array((q - 1), (w + 1)) > 0 THEN Array(q, w) = Array(q, w) + 1
-IF Array(q, (w + 1)) > 0 THEN Array(q, w) = Array(q, w) + 1
-IF Array((q + 1), (w + 1)) > 0 THEN Array(q, w) = Array(q, w) + 1
+ REM Introduction
+ REM Board = 0
+ DIM Array(38, 38)
+ q = 0
+ w = 0
+ FOR q = 0 TO 37
+ FOR w = 0 TO 37
+ Array(q, w) = 0
+ NEXT w
+ NEXT q
+ REM Edges = 11
+ x = 0
+ FOR x = 0 TO 37
+ Array(0, x) = -11
+ Array(x, 0) = -11
+ Array(37, x) = -11
+ Array(x, 37) = -11
+ NEXT x
+ REM Number calculation
+ q = 1
+ w = 1
+ FOR q = 1 TO 36
+ FOR w = 1 TO 36
+ IF Array(q, w) = 10 THEN GOTO Blarg
+ IF Array((q - 1), (w - 1)) > 0 THEN Array(q, w) = Array(q, w) + 1
+ IF Array(q, (w - 1)) > 0 THEN Array(q, w) = Array(q, w) + 1
+ IF Array((q + 1), (w - 1)) > 0 THEN Array(q, w) = Array(q, w) + 1
+ IF Array((q - 1), w) > 0 THEN Array(q, w) = Array(q, w) + 1
+ IF Array((q + 1), w) > 0 THEN Array(q, w) = Array(q, w) + 1
+ IF Array((q - 1), (w + 1)) > 0 THEN Array(q, w) = Array(q, w) + 1
+ IF Array(q, (w + 1)) > 0 THEN Array(q, w) = Array(q, w) + 1
+ IF Array((q + 1), (w + 1)) > 0 THEN Array(q, w) = Array(q, w) + 1
 Blarg:
-NEXT w
-NEXT q
-REM Gameplay
-x = 1
+ NEXT w
+ NEXT q
+ REM Gameplay
+ x = 1
 Pla:
-FOR x = 1 TO 128
+ FOR x = 1 TO 128
 Iput:
-INPUT "Enter the x coordinate of the lower left corner of the space you choose"; q
-INPUT "Enter the y coordinate of the lower left corner of the space you choose"; w
-IF q > 36 GOTO Ermove
-IF q < 0 GOTO Ermove
-IF w > 36 GOTO Ermove
-IF w < 0 GOTO Ermove
-PRINT Array((q + 1), (w + 1))
-IF Array((q + 1), (w + 1)) = 10 GOTO Lose
-NEXT x
-
-INPUT "Play again (y or n)"; Repe$
-IF Repe$ = "Y" THEN GOTO Start
-IF Repe$ = "y" THEN GOTO Start
+ INPUT "Enter the x coordinate of the lower left corner of the space you choose"; q
+ INPUT "Enter the y coordinate of the lower left corner of the space you choose"; w
+ IF q > 36 GOTO Ermove
+ IF q < 0 GOTO Ermove
+ IF w > 36 GOTO Ermove
+ IF w < 0 GOTO Ermove
+ PRINT Array((q + 1), (w + 1))
+ NEXT x
 END
-REM doofus
+ REM doofus
 Ermove:
-PRINT "Don't break the program doofus!"
-GOTO Iput
-
-
-New
-DIM Array(10, 10)
-FOR a = 1 TO 10
-FOR b = 1 TO 10
-Array(a, b) = 0
-NEXT b
+ PRINT "Don't break the program doofus!"
+ GOTO Iput
+ REM New
+ DIM Array8(38, 38)
+ FOR a = 0 TO 37
+ FOR b = 0 TO 37
+ Array8(a, b) = -1
+ NEXT b
+ NEXT a
+a = 0
+FOR a = 0 TO 37
+Array8(0, a) = -8
+Array8(a, 0) = -8
+Array8(37, a) = -8
+Array8(a, 37) = -8
 NEXT a
-GOTO GRID:
-
-
-
+ GOTO GRID:
 GRID:
- CLS
- DIM P(38, 38)
- LOCATE a, b
- PRINT CHR$(254)
- LOCATE 1, 1
- PRINT STRING$(38, 216)
- x = 2
- DO UNTIL x = 38
- LOCATE x, 1
- PRINT CHR$(216)
- LOCATE x, 38
- PRINT CHR$(216)
- x = x + 1
- LOOP
- LOCATE 38, 1
- PRINT STRING$(38, 216)
-
+  CLS
+  DIM P(38, 38)
+  LOCATE a, b
+  PRINT CHR$(254)
+  LOCATE 1, 1
+  PRINT STRING$(38, 216)
+  x = 2
+  DO UNTIL x = 38
+  LOCATE x, 1
+  PRINT CHR$(216)
+  LOCATE x, 38
+  PRINT CHR$(216)
+  x = x + 1
+  LOOP
+  LOCATE 38, 1
+  PRINT STRING$(38, 216)
