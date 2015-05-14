@@ -17,6 +17,7 @@ Realstart:
  Array(37, x) = -11
  Array(x, 37) = -11
  NEXT x
+ REM ARRAY
  REM Number calculation
  q = 1
  w = 1
@@ -49,6 +50,7 @@ REM INPUT
  PRINT Array((q + 1), (w + 1))
  NEXT x
 END
+REM DON'T BREAK ANYTHING YOU FOOL!"
  REM doofus
 Ermove:
  PRINT "Don't break the program doofus!"
