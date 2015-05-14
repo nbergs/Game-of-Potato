@@ -39,6 +39,7 @@ Blarg:
  x = 1
 Pla:
  FOR x = 1 TO 128
+ PRINT x
 Iput:
 REM INPUT
  INPUT "Enter the x coordinate of the lower left corner of the space you choose"; q
@@ -49,6 +50,7 @@ REM INPUT
  IF w < 0 GOTO Ermove
  PRINT Array((q + 1), (w + 1))
  NEXT x
+ PRINT x
 END
 REM DON'T BREAK ANYTHING YOU FOOL!"
  REM doofus
@@ -70,6 +72,7 @@ Array8(a, 0) = -8
 Array8(37, a) = -8
 Array8(a, 37) = -8
 NEXT a
+PRINT a
  GOTO GRID:
  REM GRID BORDER
 GRID:
