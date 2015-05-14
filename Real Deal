@@ -56,6 +56,7 @@ Ermove:
  PRINT "Don't break the program doofus!"
  GOTO Iput
  REM New
+ REM LOCATE COORDINATES
  DIM Array8(38, 38)
  FOR a = 0 TO 37
  FOR b = 0 TO 37
@@ -70,10 +71,11 @@ Array8(37, a) = -8
 Array8(a, 37) = -8
 NEXT a
  GOTO GRID:
- REM GRID
+ REM GRID BORDER
 GRID:
   CLS
   DIM P(38, 38)
+  REM PLACE CELLS
   LOCATE a, b
   PRINT CHR$(254)
   LOCATE 1, 1
