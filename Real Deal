@@ -39,6 +39,7 @@ Blarg:
 Pla:
  FOR x = 1 TO 128
 Iput:
+REM INPUT
  INPUT "Enter the x coordinate of the lower left corner of the space you choose"; q
  INPUT "Enter the y coordinate of the lower left corner of the space you choose"; w
  IF q > 36 GOTO Ermove
@@ -67,6 +68,7 @@ Array8(37, a) = -8
 Array8(a, 37) = -8
 NEXT a
  GOTO GRID:
+ REM GRID
 GRID:
   CLS
   DIM P(38, 38)
