@@ -51,7 +51,8 @@ INPUT "Enter the x coordinate of the lower left corner of the space you choose";
 Ermove: 
 PRINT "Don't break the program doofus!"
  GOTO Iput
- REM New 
+ REM New
+ New:
  DIM Array8(38, 38)
  FOR a = 0 TO 37
  FOR b = 0 TO 37
