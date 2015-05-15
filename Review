@@ -1,0 +1,56 @@
+' Took some things off.
+GOTO Gameplay
+REM Gameplay
+Gameplay:
+ x = 1
+PLa:
+ FOR x = 1 TO 10
+Iput:
+ INPUT "Enter the x coordinate of the lower left corner of the space you choose"; q
+ INPUT "Enter the y coordinate of the lower left corner of the space you choose"; w
+ IF q > 36 GOTO Ermove
+ IF q < 0 GOTO Ermove
+ IF w > 36 GOTO Ermove
+ IF w < 0 GOTO Ermove
+ PRINT Array((q + 1), (w + 1))
+ NEXT x
+ GOTO New
+REM doofus
+Ermove:
+ PRINT "Don't break the program doofus!"
+ GOTO Iput:
+REM New
+New:
+ DIM Array8(38, 38)
+ FOR a = 0 TO 37
+ FOR b = 0 TO 37
+ Array8(a, b) = -1
+ NEXT b
+ NEXT a
+ a = 0
+ FOR a = 0 TO 37
+ Array8(0, a) = -8
+ Array8(a, 0) = -8
+ Array8(37, a) = -8
+ Array8(a, 37) = -8
+ NEXT a
+GOTO GRID
+REM GRID
+GRID:
+ CLS
+ DIM P(38, 38)
+ ' Illegal Function Call happens at Locate
+ LOCATE a, b
+ PRINT CHR$(254)
+ LOCATE 1, 1
+ PRINT STRING$(38, 216)
+ x = 2
+ DO UNTIL x = 38
+ LOCATE x, 1
+ PRINT CHR$(216)
+ LOCATE x, 38
+ PRINT CHR$(216)
+ x = x + 1
+ LOOP
+ LOCATE 38, 1
+ PRINT STRING$(38, 216)
